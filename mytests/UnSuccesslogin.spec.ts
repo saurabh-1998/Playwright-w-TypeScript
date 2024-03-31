@@ -20,7 +20,7 @@ test('Unsuccesslogin test', async()=>{
 
     expect(errorExist).toBe(true);
     
-
+    await page.waitForTimeout(3000);
     await browser.close();
     //await new Promise(() => {});  //prevents script from exiting
 });

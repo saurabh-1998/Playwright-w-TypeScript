@@ -1,9 +1,16 @@
-import {test, Browser, Page, expect, Locator} from '@playwright/test'
+import {test, Browser, Page, expect, Locator, BrowserContext} from '@playwright/test'
 import { chromium, webkit, firefox } from '@playwright/test'
 
 test('login test', async()=>{
-    const browser:Browser = await chromium.launch({headless: false});
-    const page:Page = await browser.newPage();
+    //open browser in incognito mode
+    //const browser:Browser = await chromium.launch({headless: false, channel: 'chrome'});
+
+    //open browser in normal mode
+    const browser:BrowserContext = await chromium.launchPersistentContext('',{headless: false, channel: 'chrome'});
+
+    const pages = browser.pages();
+    const page:Page = pages[0];
+    //const page:Page = await browser.newPage();
     await page.goto("https://ecommerce-playground.lambdatest.io/index.php?route=account/login");
     
     const emailId:Locator = page.locator('#input-email');
@@ -19,7 +26,9 @@ test('login test', async()=>{
 
     await page.screenshot({path: 'homepage.png'})
 
-    expect(title).toEqual('Account Login');
+    expect(title).toEqual('My Account');
+
+    await page.waitForTimeout(3000);
 
     await browser.close();
 

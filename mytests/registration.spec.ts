@@ -30,6 +30,8 @@ test('registration test', async()=>{
 
     expect(msgExist).toBe(true);
 
+    await page.waitForTimeout(3000);
+
     //await new Promise(() => {});  //prevents script from exiting
 
     await browser.close();
