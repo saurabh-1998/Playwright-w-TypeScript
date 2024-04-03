@@ -10,10 +10,6 @@ Demo for Microsoft Playwright
 
 `npm test`
 
-# Notes
-
-- Used tool https://www.testim.io/playground/ for fast recording of scripts
-
 # To reinstall the dependency
 
 `rm -rf node_modules`
@@ -43,14 +39,6 @@ Demo for Microsoft Playwright
     - Support for web components via shadow-piercing selectors
     - Native input events for mouse and keyboard
     - Upload and download files
-- Trend:
-  ![Trend](https://playwright.tech/blog/what-is-playwright/star-history-playwright.png)
-- For comparision with other tools, please refer:
-  https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
-- Playwright itself is not a QA Automation library, so it won’t make assertions neither test reports.
-  But we can integrate with other libraries and build our very own UI Automation Framework.
-  You can chose to integrate with 2 other npm libraries: mocha and chai because they are ones of most popular javascript
-  testing libraries and easy to configure. Mocha is basically the test runner layer and Chai.js is basically playing the assertion role.
 
 Inside that directory, you can run several commands:
 
