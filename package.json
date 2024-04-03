@@ -1,0 +1,17 @@
+{
+  "name": "playwrightdemo",
+  "version": "1.0.0",
+  "description": "This repo is used for PlayWright Testscript for Demo using Type Script",
+  "main": "index.js",
+  "directories": {
+    "test": "src/test"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.12.3"
+  }
+}
