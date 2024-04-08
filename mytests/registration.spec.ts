@@ -12,7 +12,7 @@ test('registration test', async()=>{
     const phone:Locator = page.locator('#input-telephone');
     const passwrd:Locator = page.locator('#input-password');
     const cpasswrd:Locator = page.locator('#input-confirm');
-    const agree:Locator = page.locator('css=div.float-right');
+    const agree:Locator = page.locator("//label[@for='input-agree']");
     const regbtn:Locator = page.locator("[value='Continue']");
 
 

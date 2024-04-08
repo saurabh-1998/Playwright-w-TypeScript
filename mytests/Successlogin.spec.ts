@@ -16,6 +16,8 @@ test('login test', async()=>{
     const emailId:Locator = page.locator('#input-email');
     const passwrd:Locator = page.locator('#input-password');
     const loginbtn:Locator = page.locator("[value='Login']");
+    const menu:Locator =page.locator('text=Mega Menu');
+    const product:Locator =page.locator("#entry281_216481 > div > div > ul > li:nth-child(1) > a");
 
     await emailId.fill("cusat.sk7@gmail.com");
     await passwrd.fill("sourya@1998");
@@ -24,11 +26,15 @@ test('login test', async()=>{
     const title = await page.title();
     console.log("Homepage Title: ", title);
 
-    await page.screenshot({path: 'homepage.png'})
+    //await page.screenshot({path: 'homepage.png'})
 
     expect(title).toEqual('My Account');
 
-    await page.waitForTimeout(3000);
+    await menu.hover();
+    await product.hover();
+    await product.click();
+
+    await page.waitForTimeout(5000);
 
     await browser.close();
 
