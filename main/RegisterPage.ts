@@ -28,12 +28,13 @@ export default class RegisterPage {
         await this.page.locator('#input-confirm').type(password);
     }
 
-    // async isSubscribedChecked(){
-    //     return await this.page.locator("#input-newsletter-no");
-    // }
+    isSubscribedChecked(){
+         return this.page.locator("#input-newsletter-no");
+    }
 
     async clickTermandCondition(){
         await this.page.click("//label[@for='input-agree']");
+        //await this.page.getByLabel('I have read and agree to the ').click();
     }
 
     async clickContinueBtn(){

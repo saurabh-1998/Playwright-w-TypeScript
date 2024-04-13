@@ -3,15 +3,24 @@ export default class LoginPage {
 
     constructor(public page: Page){}
 
+    async login(email: string, password: string){
+        await this.enterLoginEmail(email);
+        await this.enterLoginPassword(password);
+        await this.clickLoginBtn();
+    }
+
     async enterLoginEmail(email: string){
-        await this.page.locator("inut[name='email']").type(email);
+        await this.page.locator("input[name='email']").type(email);
     }
 
     async enterLoginPassword(password: string){
-        await this.page.locator("inut[name='password']").type(password);
+        await this.page.locator("input[name='password']").type(password);
     }
 
     async clickLoginBtn(){
-        await this.page.click("input[value='Login']");
+        await Promise.all([
+            this.page.waitForNavigation({waitUntil:"networkidle"}),
+            await this.page.click("input[value='Login']")
+        ])
     }
 }
